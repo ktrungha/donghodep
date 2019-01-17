@@ -35,7 +35,7 @@ class EditWatch extends React.PureComponent<Props, { watch: Watch }> {
     return (
       <div style={{ flex: 1 }}>
         <div style={{ margin: '10px' }}>
-          Thương Hiệu:
+          Thương Hiệu:&nbsp;
           <select
             value={watch.brand}
             onChange={({ target }) => this.setState({ watch: { ...watch, brand: target.value } })}
@@ -46,7 +46,7 @@ class EditWatch extends React.PureComponent<Props, { watch: Watch }> {
           </select>
         </div>
         <div style={{ margin: '10px' }}>
-          Tên:
+          Tên:&nbsp;
           <input
             value={watch.name}
             onChange={({ target }) => this.setState({ watch: { ...watch, name: target.value } })}
@@ -91,14 +91,22 @@ class EditWatch extends React.PureComponent<Props, { watch: Watch }> {
             Thêm ảnh
           </button>
         </div>
-        <select
-          value={watch.type}
-          onChange={({ target }) => this.setState({ watch: { ...watch, type: target.value } })}
-        >
-          <option value="male">Nam</option>
-          <option value="female">Nữ</option>
-        </select>
-        <br />
+        <div style={{ margin: '10px' }}>
+          <select
+            value={watch.type}
+            onChange={({ target }) => this.setState({ watch: { ...watch, type: target.value } })}
+          >
+            <option value="male">Nam</option>
+            <option value="female">Nữ</option>
+          </select>
+        </div>
+        <div style={{ margin: '10px' }}>
+          Video:&nbsp;
+          <input
+            value={watch.video || ''}
+            onChange={({ target }) => this.setState({ watch: { ...watch, video: target.value } })}
+          />
+        </div>
         <br />
         <br />
         <Button
