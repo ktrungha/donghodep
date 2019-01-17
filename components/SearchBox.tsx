@@ -74,7 +74,7 @@ class SearchBox extends React.PureComponent<Props, State> {
           }}
           onSuggestionSelected={(_event, { suggestion }) => {
             this.setState({ watchId: suggestion.id }, () => {
-              window.location.href = encodeURI(`/book?id=${this.state.watchId}`);
+              window.location.href = encodeURI(`/watch?id=${this.state.watchId}`);
             });
           }}
         />
