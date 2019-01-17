@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Linotte';
+  src: url('https://s3-ap-southeast-1.amazonaws.com/langora.media/fonts/Regular.otf');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Linotte';
+  src: url('https://s3-ap-southeast-1.amazonaws.com/langora.media/fonts/SemiBold.otf');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Linotte';
+  src: url('https://s3-ap-southeast-1.amazonaws.com/langora.media/fonts/Bold.otf');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Linotte';
+  src: url('https://s3-ap-southeast-1.amazonaws.com/langora.media/fonts/Heavy.otf');
+  font-weight: 900;
+}
+@font-face {
+  font-family: 'Linotte';
+  src: url('https://s3-ap-southeast-1.amazonaws.com/langora.media/fonts/Light.otf');
+  font-weight: 300;
+}
+
+body {
+  font-family: 'Linotte';
+  color: #3c3c3c;
+  margin: 0;
+}
