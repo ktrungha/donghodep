@@ -2,13 +2,13 @@ import React from 'react';
 import App, { Container } from 'next/app';
 import '../styles/index.css';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import blue from '@material-ui/core/colors/blue';
+import red from '@material-ui/core/colors/red';
 import Router from 'next/router';
 import withGA from 'next-ga';
 
 const theme = createMuiTheme({
   palette: {
-    primary: blue,
+    primary: red,
   },
   typography: {
     useNextVariants: true,

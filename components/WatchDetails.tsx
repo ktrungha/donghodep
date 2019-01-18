@@ -3,7 +3,7 @@ import Watch from '../models/Watch';
 import styled from 'styled-components';
 import LoadingBox from './LoadingBox';
 import { media } from '../styles';
-import { Button } from '@material-ui/core';
+import { Button, Tabs, Tab } from '@material-ui/core';
 
 const Image = styled.img`
   width: 100px;
@@ -49,29 +49,26 @@ class WatchDetails extends React.PureComponent<
     return (
       <div style={{ margin: '20px 0', textAlign: 'center' }}>
         <h2 style={{ fontWeight: 500 }}>{watch.brand}</h2>
+        {false && (
+          <div
+            className="fb-like"
+            data-layout="button_count"
+            data-action="like"
+            data-show-faces="true"
+          />
+        )}
 
-        <div
-          style={{
-            display: 'flex',
-            width: '100%',
-            maxWidth: '400px',
-            justifyContent: 'space-evenly',
-            margin: '10px auto',
-          }}
+        <Tabs
+          value={showVideo ? 1 : 0}
+          style={{ margin: '15px 0' }}
+          centered
+          indicatorColor="primary"
+          textColor="primary"
+          onChange={(_, value) => this.setState({ showVideo: value === 0 ? false : true })}
         >
-          <Button
-            variant={showVideo ? 'outlined' : 'contained'}
-            onClick={() => this.setState({ showVideo: false })}
-          >
-            Ảnh
-          </Button>
-          <Button
-            variant={showVideo ? 'contained' : 'outlined'}
-            onClick={() => this.setState({ showVideo: true })}
-          >
-            Video
-          </Button>
-        </div>
+          <Tab label="Ảnh" />
+          <Tab label="Video" />
+        </Tabs>
 
         <div style={{ display: showVideo ? 'none' : 'block' }}>
           <MainImage src={this.state.currentImage} />
@@ -91,11 +88,7 @@ class WatchDetails extends React.PureComponent<
         </div>
         {watch.video && (
           <div style={{ display: showVideo ? 'block' : 'none' }}>
-            <div
-              className="fb-video"
-              data-href={watch.video}
-              data-width="500"
-            />
+            <div className="fb-video" data-href={watch.video} data-width="500" />
           </div>
         )}
         <br />
