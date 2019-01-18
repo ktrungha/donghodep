@@ -7,10 +7,11 @@ const A = styled.a`
   text-decoration: none;
   color: inherit;
   flex-grow: 1;
+  outline: none;
 `;
 
 const UL = styled.ul`
-  transform-origin: 0 0 ;
+  transform-origin: 0 0;
   animation: openBrands 200ms;
 `;
 
@@ -30,7 +31,7 @@ class MobileMenu extends React.PureComponent<Props, State> {
     const { openBrands } = this.state;
     return (
       <Menu>
-        <div onClick={() => this.setState({ openBrands: !openBrands })}>
+        <div style={{ outline: 0 }} onClick={() => this.setState({ openBrands: !openBrands })}>
           Thương Hiệu
           {openBrands && (
             <UL>
