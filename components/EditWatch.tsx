@@ -40,6 +40,7 @@ class EditWatch extends React.PureComponent<Props, { watch: Watch }> {
             value={watch.brand}
             onChange={({ target }) => this.setState({ watch: { ...watch, brand: target.value } })}
           >
+            <option style={{ display: 'none' }}>--</option>
             {brands.map((brand) => (
               <option key={brand.id}>{brand.name}</option>
             ))}
